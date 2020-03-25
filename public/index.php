@@ -10,7 +10,7 @@ $action     = isset($url[1]) && $url[1] ? $url[1] : 'index';
 $param     = isset($url[2]) && $url[2] ? $url[2] :  null;
 
 if(!class_exists($controller = 'App\\Controllers\\' . ucfirst($controller) . 'Controller')){
-    echo '404 - Página não encotrada';
+    print (new \App\Views\View('404.php'))->render();
     die;
 }
 
