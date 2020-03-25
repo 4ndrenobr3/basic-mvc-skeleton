@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 100px 100vh 50px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+}
+
+header{
+    grid-template-area: header;
+    background-color: blueviolet;
+}
+
+main{
+    grid-template-area: main;
+    background-color: antiquewhite;
+}
+
+footer{
+    grid-template-area: footer;
+    background-color: darkmagenta;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
