@@ -9,7 +9,7 @@ class View
 
     public function __construct($view)
     {
-        $this->view;
+        $this->view = $view;
     }
 
     public function __set($index, $value)

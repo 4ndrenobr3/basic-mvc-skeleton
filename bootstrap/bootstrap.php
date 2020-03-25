@@ -2,4 +2,4 @@
 
 require __DIR__ . './../vendor/autoload.php';
 
-define('VIEW_PATH', __DIR__ . '/front/');
+define('VIEWS_PATH', __DIR__ . './../front/');
