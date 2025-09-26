@@ -1,13 +1,21 @@
 <?php
+declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Views\View;
 
 class HomeController
 {
-    public function index()
+    private View $view;
+
+    public function __construct(View $view)
     {
-        $view = new View('index.php');
-        return $view->render();
+        $this->view = $view;
+    }
+
+    public function index(): string
+    {
+        $this->view->view = 'index.php';
+        return $this->view->render();
     }
 }
