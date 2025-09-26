@@ -6,7 +6,7 @@ use App\Views\View;
 
 class HomeController
 {
-    public function index()
+    public function index(): string
     {
         $view = new View('index.php');
         return $view->render();
