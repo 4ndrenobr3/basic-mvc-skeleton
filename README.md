@@ -27,11 +27,9 @@ Follow these steps to get the project up and running on your local machine:
 1.  **Clone the repository:**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/4ndrenobr3/basic-mvc-skeleton.git
     cd basic-mvc-skeleton
     ```
-
-    *(Replace `<repository-url>` with the actual URL of your repository.)*
 
 2.  **Install Composer dependencies:**
 
