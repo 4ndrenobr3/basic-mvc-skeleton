@@ -2,11 +2,12 @@
 declare(strict_types=1);
 namespace App\Views;
 
+use App\Exceptions\ViewNotFoundException;
 
 class View
 {
-    private $view;
-    private $data = array();
+    private string $view;
+    private array $data = [];
 
     public function __construct(string $view)
     {
@@ -25,9 +26,19 @@ class View
 
     public function render(): string
     {
+        if (!defined('VIEWS_PATH')) {
+            throw new ViewNotFoundException('VIEWS_PATH is not defined.');
+        }
+
+        $viewPath = VIEWS_PATH . $this->view;
+
+        if (!file_exists($viewPath)) {
+            throw new ViewNotFoundException(sprintf('View file not found: %s', $viewPath));
+        }
+
         ob_start();
 
-        require VIEWS_PATH . $this->view;
+        require $viewPath;
 
         return ob_get_clean();
     }
